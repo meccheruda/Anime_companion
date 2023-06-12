@@ -2,6 +2,7 @@
   background: rgb(209, 209, 164);
   display: flex;
   justify-content: space-between;
+  height: 70px;
 }
 
 .header-right{
@@ -12,3 +13,64 @@
 ul{
   list-style: none;
 }
+
+.anime-list{
+  display: flex;
+  justify-content: center;
+  border: 2px black;
+}
+
+
+/*ここまでがヘッダー部分*/
+/*ここからjavascript系*/
+.main {
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+.mode-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ライトモードのスタイル */
+.light-mode {
+  background-color: blue;
+}
+
+/* ダークモードのスタイル */
+.dark-mode {
+  background-color: #333333;
+}
+
+.light-mode #modeToggleImg {
+  content: url('images/dark-mode.png');
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+}
+
+.dark-mode #modeToggleImg {
+  content: url('images/light-mode.png');
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+}
+
+.mode-toggle-image {
+  width: 150px;
+  height: 150px;
+}
+
+li{
+  font-size: 100px;
+}
+
+.icon{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+}
+

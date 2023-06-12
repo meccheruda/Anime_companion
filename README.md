@@ -187,9 +187,9 @@
 # ローカルでの動作方法
 以下のコマンドを順に実行
 
-git clone https://github.com/meccheruda/Anime-Companion
+git clone https://github.com/meccheruda/Anime_Companion
 ## クローンしたアプリに移動
-% cd Anime-Companion
+% cd Anime_Companion
 ## Gemをインストール
 % bundle install
 ## JavaScriptのパッケージをインストール
