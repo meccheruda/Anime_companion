@@ -37,7 +37,7 @@ ul{
 
 /* ライトモードのスタイル */
 .light-mode {
-  background-color: blue;
+  background-color: rgb(85, 230, 116);
 }
 
 /* ダークモードのスタイル */
@@ -46,14 +46,12 @@ ul{
 }
 
 .light-mode #modeToggleImg {
-  content: url('images/dark-mode.png');
   background-color: transparent;
   width: 150px;
   height: 150px;
 }
 
 .dark-mode #modeToggleImg {
-  content: url('images/light-mode.png');
   background-color: transparent;
   width: 150px;
   height: 150px;
