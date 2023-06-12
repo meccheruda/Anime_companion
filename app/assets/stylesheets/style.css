@@ -1,0 +1,14 @@
+.header{
+  background: rgb(209, 209, 164);
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-right{
+  display: flex;
+  justify-content: right;
+}
+
+ul{
+  list-style: none;
+}
