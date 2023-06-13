@@ -4,16 +4,16 @@
 ## Anime Companion
 
 # アプリケーション概要
-"Anime Companion"はアニメファンのための便利なアプリで、情報提供とAI機能を組み合わせています。常に右下に美少女AIがいて、ユーザーは彼女と会話したり、アニメに関する情報を入手したりできます。
+"Anime Companion"はアニメファンのための便利なアプリで、情報提供と検索機能を組み合わせて、アニメに関する情報を入手したりできます。
 
 # URL
-未デプロイ
+https://anime-companion.onrender.com
 
 # 利用方法
 アニメ情報、コメントを閲覧するだけなら登録なしでも可能。
-コメントや好きなアニメを登録したい場合は要新規登録。
+コメントやお気に入り登録したい場合は要新規登録。
 新規登録はヘッダーの新規登録から行う。
-アニメの感想や評価やらを自由にコメントしよう
+アニメの感想や評価やらを自由にコメントしよう。
 
 # アプリケーションを作成した背景
 自身のブログにオリジナリティを出すために、オリジナルのアニメ検索、一覧アプリを作成
@@ -32,7 +32,7 @@
 人気のアニメランキングやレビュー、視聴者のコメントも閲覧できます。
 
 ## 2.検索機能
-年代、キャスト、制作会社、原作者、ジャンルなどでアニメを検索できます。
+年代、キャスト、制作会社、原作者、ジャンル、声優などでアニメを検索できます。
 
 ## 3.アニメのおすすめ機能:
 ユーザーの好みや視聴履歴に基づいて、オススメのアニメを提案します。
@@ -89,7 +89,7 @@
 - has_many :anime_favorites
 - has_many :favorites,through: :anime_favorites
 - has_many :voices
-- has_many :voice,through: :anime_favorites
+- has_many :voices,through: :anime_favorites
 
 
 
@@ -167,13 +167,13 @@
 
 | Column      | Type     | Options                       |
 | ----------- | -------- | ----------------------------- |
-| favorites   | references | null: false, foreign_key: true |お気に入りしたユーザーののID
+| favorite    | references | null: false, foreign_key: true |お気に入りしたユーザーののID
 | anime       | references | null: false  foreign_key: true |アニメのID
 
 ### Association
 
 - belongs_to :anime
-- belongs_to :favorites
+- belongs_to :favorite
 
 
 
