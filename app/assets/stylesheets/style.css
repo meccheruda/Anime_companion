@@ -72,3 +72,10 @@ li{
   bottom:20px;
 }
 
+.footer{
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  rgb(209, 209, 164);
+}
