@@ -19,6 +19,7 @@
         </div>
         <div class = "header-right">
           <% if user_signed_in? %>
+          <p>こんにちは<%= link_to current_user.name, "#" %>さん</p>
             <a class="nav-link" aria-current="page" href="#"><button type="button" class="btn btn-info">投稿</button></a>
             <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link btn btn-info button-style" %>
           <% else %>
