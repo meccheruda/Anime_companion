@@ -21,6 +21,25 @@ ul{
 }
 
 
+/* テーブル全体のスタイル */
+#genreTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* テーブルヘッダーのスタイル */
+#genreTable th {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* テーブルデータのスタイル */
+#genreTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
 /*ここまでがヘッダー部分*/
 /*ここからjavascript系*/
 .main {
