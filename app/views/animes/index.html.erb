@@ -1,11 +1,22 @@
 <div class="main light-mode">
 
-    <div class="anime-list">
+<div class="anime-list">
+  <table>
+    <thead>
+      <tr>
+        <th>タイトル</th>
+      </tr>
+    </thead>
+    <tbody>
       <% @animes.each do |anime| %>
-      <ul>
-        <li><%= anime.title %></li>
-      </ul>
+        <tr>
+          <td><%= anime.title %></td>
+        </tr>
       <% end %>
+    </tbody>
+  </table>
+</div>
+
 
     </div>
 <div id="genreToggleBtn" class="nav-link btn btn-light button-style">ジャンル詳細</div>
