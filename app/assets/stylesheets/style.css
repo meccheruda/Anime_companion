@@ -139,3 +139,10 @@ justify-content: center;}
 .button-style:hover {
   background-color: darkblue;
 }
+
+
+
+.form-arrangement{
+  display: flex;
+  justify-content: center;
+}

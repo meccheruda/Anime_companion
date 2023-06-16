@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_15_072159) do
-  create_table "anime_voices", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "anime_id"
-    t.bigint "voice_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["anime_id"], name: "index_anime_voices_on_anime_id"
-    t.index ["voice_id"], name: "index_anime_voices_on_voice_id"
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_061137) do
   create_table "animes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -28,7 +19,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_072159) do
     t.string "quote", null: false
     t.string "production", null: false
     t.string "directed_by", null: false
-    t.integer "genre_id", null: false
+    t.integer "genre_id1", null: false
+    t.integer "genre_id2", null: false
+    t.integer "genre_id3", null: false
+    t.string "name1"
+    t.string "name2"
+    t.string "name3"
+    t.string "name4"
+    t.string "name5"
+    t.string "name6"
+    t.string "name7"
+    t.string "name8"
+    t.string "name9"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,16 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_072159) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "voices", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.bigint "anime_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["anime_id"], name: "index_voices_on_anime_id"
-  end
-
-  add_foreign_key "anime_voices", "animes"
-  add_foreign_key "anime_voices", "voices"
   add_foreign_key "animes", "users"
-  add_foreign_key "voices", "animes"
 end

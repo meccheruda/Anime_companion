@@ -2,22 +2,11 @@
 
     <div class="anime-list">
       <% @animes.each do |anime| %>
-        <p><%= anime.text %></p>
+      <ul>
+        <li><%= anime.title %></li>
+      </ul>
       <% end %>
-       <ul>
-       <li>1
-       </li>
-       <li>2
-       </li>
-       <li>3
-       </li>
-       <li>4
-       </li>
-       <li>5
-       </li>
-       <li>6
-       </li>
-       </ul>
+
     </div>
 <div id="genreToggleBtn" class="nav-link btn btn-light button-style">ジャンル詳細</div>
            <table id="genreTable">
