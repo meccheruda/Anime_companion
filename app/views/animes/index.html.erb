@@ -1,6 +1,9 @@
 <div class="main light-mode">
 
     <div class="anime-list">
+      <% @animes.each do |anime| %>
+        <p><%= anime.text %></p>
+      <% end %>
        <ul>
        <li>1
        </li>
@@ -78,7 +81,7 @@
                     <td>学校や学園生活を舞台にしたアニメ</td>
                 </tr>
                  <tr>
-                    <td>SF(科学技術)</td>
+                    <td>SF</td>
                     <td>科学技術の進歩や未来社会をテーマにしたアニメ</td>
                 </tr>
                   <tr>
