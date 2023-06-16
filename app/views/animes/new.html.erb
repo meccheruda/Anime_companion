@@ -1,0 +1,106 @@
+<h1>アニメ投稿</h1>
+
+<div class="form-arrangement">
+<%= form_with(model: @anime, url: animes_path, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :title, "アニメのタイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "アニメの説明" %><br />
+    <%= f.text_area :description, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :year , "年代" %><br />
+    <%= f.text_field :year , class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_url, "アニメ画像" %><br />
+    <%= f.text_field :image_url  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quote, "画像の引用元" %><br />
+    <%= f.text_field :quote %>
+  </div>
+
+  <div class="field">
+    <%= f.label :production, "制作会社" %><br />
+    <%= f.text_field :production, class: :form__text  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :directed_by, "アニメ監督" %><br />
+    <%= f.text_field :directed_by, class: :form__text %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :genre_id1, "ジャンル" %><br />
+    <%= f.collection_select(:genre_id1, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+ <div class="field">
+    <%= f.label :genre_id2, "ジャンル" %><br />
+    <%= f.collection_select(:genre_id2, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+   <div class="field">
+    <%= f.label :genre_id3, "ジャンル" %><br />
+    <%= f.collection_select(:genre_id3, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name1, "声優" %><br />
+    <%= f.text_field :name1, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name2, "声優" %><br />
+    <%= f.text_field :name2, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name3, "声優" %><br />
+    <%= f.text_field :name3, class: :form__text %>
+  </div>
+
+<div class="field">
+    <%= f.label :name4, "声優" %><br />
+    <%= f.text_field :name4, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name5, "声優" %><br />
+    <%= f.text_field :name5, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name6, "声優" %><br />
+    <%= f.text_field :name6, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name7, "声優" %><br />
+    <%= f.text_field :name7, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name8, "声優" %><br />
+    <%= f.text_field :name8, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name9, "声優" %><br />
+    <%= f.text_field :name9, class: :form__text %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
+
+</div>

@@ -1,22 +1,115 @@
 <div class="main light-mode">
 
-    <div class="anime-list">
-       <ul>
-       <li>1
-       </li>
-       <li>2
-       </li>
-       <li>3
-       </li>
-       <li>4
-       </li>
-       <li>5
-       </li>
-       <li>6
-       </li>
-       </ul>
-    </div>
+<div class="anime-list">
+  <table>
+    <thead>
+      <tr>
+        <th>タイトル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @animes.each do |anime| %>
+        <tr>
+          <td><%= anime.title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
+
+    </div>
+<div id="genreToggleBtn" class="nav-link btn btn-light button-style">ジャンル詳細</div>
+           <table id="genreTable">
+               <thead>
+                  <tr>
+                    <th>ジャンル</th>
+                    <th>説明</th>
+                  </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                    <td>コメディ</td>
+                    <td>笑いを主眼においたユーモラスなアニメ</td>
+                </tr>
+                 <tr>
+                    <td>感動</td>
+                    <td>心に響くストーリーのアニメ</td>
+                </tr>
+                  <tr>
+                    <td>アクション</td>
+                    <td>動きの激しいシーンや戦闘が主要な要素となるアニメ</td>
+                </tr>
+                 <tr>
+                    <td>ロマンス</td>
+                    <td>恋愛や人間関係が中心となるアニメ</td>
+                </tr>
+                  <tr>
+                    <td>ドラマ</td>
+                    <td>感動的なストーリーや深い人間ドラマが描かれるアニメ</td>
+                </tr>
+                 <tr>
+                    <td>感動</td>
+                    <td>魔法や異世界などの架空の要素が含まれるアニメ</td>
+                </tr>
+                  <tr>
+                    <td>サイエンスフィクション</td>
+                    <td>科学技術や未来の世界がテーマとなるアニメ</td>
+                </tr>
+                 <tr>
+                    <td>スリラー</td>
+                    <td>緊迫感やサスペンスがあり、ドキドキする要素が含まれるアニメ</td>
+                </tr>
+                  <tr>
+                    <td>ホラー</td>
+                    <td>恐怖や不気味な要素が描かれるアニメ</td>
+                </tr>
+                 <tr>
+                    <td>冒険</td>
+                    <td>主人公が未知の世界や場所を冒険するアニメ</td>
+                </tr>
+                  <tr>
+                    <td>スポーツ</td>
+                    <td>競技やスポーツに焦点を当てたアニメ</td>
+                </tr>
+                 <tr>
+                    <td>歴史</td>
+                    <td>歴史的な時代や出来事を題材にしたアニメ</td>
+                </tr>
+                  <tr>
+                    <td>学園</td>
+                    <td>学校や学園生活を舞台にしたアニメ</td>
+                </tr>
+                 <tr>
+                    <td>SF</td>
+                    <td>科学技術の進歩や未来社会をテーマにしたアニメ</td>
+                </tr>
+                  <tr>
+                    <td>ミステリー</td>
+                    <td>謎や推理が中心となるアニメ</td>
+                </tr>
+                 <tr>
+                    <td>スーパーパワー</td>
+                    <td>特殊な能力や超人的な力が登場するアニメ</td>
+                </tr>
+                  <tr>
+                    <td>バトル</td>
+                    <td>強さや戦闘を競うバトルがメインとなるアニメ</td>
+                </tr>
+                 <tr>
+                    <td>メカニック</td>
+                    <td>ロボットやメカが登場し、戦闘や冒険が展開するアニメ</td>
+                </tr>
+                  <tr>
+                    <td>音楽</td>
+                    <td>音楽やアイドル活動が主要な要素となるアニメ</td>
+                </tr>
+                 <tr>
+                    <td>神話・伝説</td>
+                    <td>神話や伝説、神秘的な要素が登場するアニメ</td>
+                </tr>
+               </tbody>
+          </table>
     
 
  <div id="mode-toggle" class="icon">

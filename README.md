@@ -89,7 +89,7 @@ https://anime-companion.onrender.com
 - has_many :anime_favorites
 - has_many :favorites,through: :anime_favorites
 - has_many :voices
-- has_many :voices,through: :anime_favorites
+- has_many :voices,through: :anime_voices
 
 
 
@@ -97,16 +97,7 @@ https://anime-companion.onrender.com
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| name1       |  string    |                                |声優
-| name2       |  string    |                                |声優
-| name3       |  string    |                                |声優
-| name4       |  string    |                                |声優
-| name5       |  string    |                                |声優
-| name6       |  string    |                                |声優
-| name7       |  string    |                                |声優
-| name8       |  string    |                                |声優
-| name9       |  string    |                                |声優
-| name0       |  string    |                                |声優
+| name        |  string    |                                |声優
 | anime       | references | null: false  foreign_key: true |アニメのID
 
 ### Association
@@ -118,7 +109,7 @@ https://anime-companion.onrender.com
 
 
 
-## Anime_voice テーブル  (お気に入りとアニメの中間テーブル)
+## Anime_voice テーブル  (アニメと声優の中間テーブル)
 
 | Column      | Type     | Options                       |
 | ----------- | -------- | ----------------------------- |

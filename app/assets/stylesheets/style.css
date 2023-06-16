@@ -21,6 +21,25 @@ ul{
 }
 
 
+/* テーブル全体のスタイル */
+#genreTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* テーブルヘッダーのスタイル */
+#genreTable th {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* テーブルデータのスタイル */
+#genreTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
 /*ここまでがヘッダー部分*/
 /*ここからjavascript系*/
 .main {
@@ -63,7 +82,7 @@ ul{
 }
 
 li{
-  font-size: 100px;
+  font-size: 30px;
 }
 
 .icon{
@@ -119,4 +138,23 @@ justify-content: center;}
 
 .button-style:hover {
   background-color: darkblue;
+}
+
+
+
+.form-arrangement{
+  display: flex;
+  justify-content: center;
+}
+
+/*トップページの表*/
+.anime-list table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.anime-list th, .anime-list td {
+  border: 1px solid #000;
+  padding: 8px;
 }
