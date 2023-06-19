@@ -1,5 +1,4 @@
 class AnimesController < ApplicationController
-  before_action :authenticate_user!
   before_action :check_user_id, only: [:new]
 
   def index
