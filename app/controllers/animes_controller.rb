@@ -18,6 +18,10 @@ class AnimesController < ApplicationController
   end
   end
 
+  def show
+    @anime = Anime.find(params[:id])
+  end
+
   private
 
   def anime_params
