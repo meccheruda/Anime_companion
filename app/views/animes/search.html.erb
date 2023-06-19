@@ -1,0 +1,30 @@
+<div class="main light-mode">
+
+<div class="anime-list">
+  <% if @results.present? %>
+    <table>
+      <thead>
+        <tr>
+          <th>タイトル</th>
+        </tr>
+      </thead>
+      <tbody>
+<% @results.each do |anime| %>
+  <tr>
+    <td><a href="<%= anime_path(anime) %>"><%= anime.title %></a></td>
+  </tr>
+<% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>検索に該当するアニメはありません</p>
+  <% end %>
+</div>
+
+
+ <div id="mode-toggle" class="icon">
+    <button id="modeToggleBtn" class="mode-toggle-button">
+     <%= image_tag("light-mode.png", alt: "Dark Mode", size: "200x200", id: "modeToggleImg", class: "mode-toggle-image") %>
+    </button>
+  </div>
+</div>

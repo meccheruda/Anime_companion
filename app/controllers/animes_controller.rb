@@ -23,6 +23,11 @@ class AnimesController < ApplicationController
     @anime = Anime.find(params[:id])
   end
 
+  def search
+    @keyword = params[:keyword]
+    @results = Anime.where("title LIKE ? OR year LIKE ?", "%#{@keyword}%", "%#{@keyword}%")
+  end
+
   private
 
   def anime_params

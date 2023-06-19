@@ -149,6 +149,11 @@ justify-content: center;}
 }
 
 /*トップページの表*/
+
+.anime-list{
+padding-top: 50px;
+}
+
 .anime-list table {
   border-collapse: collapse;
   width: 70%;
@@ -176,6 +181,8 @@ justify-content: center;}
 .anime-box-img {
   display: block;
   margin: 0 auto;
+  height: 600px;
+  width: 400px;
 }
 
 /* テーブルのスタイル */
