@@ -1,4 +1,6 @@
 class AnimesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user_id, only: [:new]
 
   def index
     @animes = Anime.all
@@ -18,6 +20,10 @@ class AnimesController < ApplicationController
   end
   end
 
+  def show
+    @anime = Anime.find(params[:id])
+  end
+
   private
 
   def anime_params
@@ -25,5 +31,12 @@ class AnimesController < ApplicationController
       :genre_id1, :genre_id2, :genre_id3, :name1, :name2, :name3, :name4, :name5, :name6, :name7, :name8, :name9)
       .merge(user_id: current_user.id, genre_id1: params[:anime][:genre_id1], genre_id2: params[:anime][:genre_id2], genre_id3: params[:anime][:genre_id3])
   end  
+
+  def check_user_id
+    unless current_user.id == 1
+      flash[:alert] = "管理者ではないため、このページにはアクセスできません。"
+      redirect_to root_path
+    end
+  end
 
 end

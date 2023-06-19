@@ -1,0 +1,42 @@
+   <div class="anime-img-content">
+      <%= image_tag @anime.image_url, class:"anime-box-img" %>
+   </div>
+
+    <div class="anime-explain-box">
+      <span>画像引用元<%= @anime.quote %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-anime">タイトル</th>
+          <td class="detail-value"><%= @anime.title %></td>
+        </tr>
+        <tr>
+          <th class="detail-anime">ジャンル</th>
+          <td class="detail-value" colspan="3">
+             <% [1, 2, 3].each do |genre_number| %>
+             <%= Genre.find(@anime.send("genre_id#{genre_number}")).name %>
+               <% if genre_number < 3 %>
+                    /
+               <% end %>
+             <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-anime">年代</th>
+          <td class="detail-value"><%= @anime.year %>年</td>
+        </tr>
+        <tr>
+          <th class="detail-anime">制作会社</th>
+          <td class="detail-value"><%= @anime.production %></td>
+        </tr>
+        <tr>
+          <th class="detail-anime">アニメ監督</th>
+          <td class="detail-value"><%= @anime.directed_by %></td>
+        </tr>
+        <tr>
+          <th class="detail-anime">アニメの説明</th>
+          <td class="detail-value"><%= @anime.description %></td>
+        </tr>
+      </tbody>
+    </table>

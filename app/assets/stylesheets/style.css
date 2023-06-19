@@ -45,6 +45,7 @@ ul{
 .main {
   background-color: #f2f2f2;
   position: relative;
+  height: 100vw;
 }
 
 .mode-toggle-button {
@@ -157,4 +158,47 @@ justify-content: center;}
 .anime-list th, .anime-list td {
   border: 1px solid #000;
   padding: 8px;
+}
+
+
+/*ここから詳細ページ*/
+/* 画像引用元のスタイル */
+.anime-explain-box {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.anime-img-content {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.anime-box-img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* テーブルのスタイル */
+.detail-table {
+  width: 70%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 1rem;
+  text-align: center;
+}
+
+.detail-table th {
+  background-color: #f2f2f2;
+}
+
+.detail-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.detail-table tr:nth-child(odd) {
+  background-color: #ffffff;
 }

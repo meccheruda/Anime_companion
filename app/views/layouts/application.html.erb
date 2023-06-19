@@ -20,7 +20,9 @@
         <div class = "header-right">
           <% if user_signed_in? %>
           <p>こんにちは<%= link_to current_user.name, "#" %>さん</p>
-            <%= button_to "投稿", new_anime_path, method: :get, class: "nav-link btn btn-info button-style" %>
+             <% if current_user.id == 1 %>
+                  <%= button_to "投稿", new_anime_path, method: :get, class: "nav-link btn btn-info button-style" %>
+             <% end %>
             <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link btn btn-info button-style" %>
           <% else %>
             <%= button_to "ログイン", new_user_session_path, method: :get, class: "nav-link btn btn-info button-style" %>
