@@ -8,9 +8,9 @@ class CreateAnimes < ActiveRecord::Migration[7.0]
       t.string :quote,       null: false
       t.string :production,  null: false
       t.string :directed_by, null: false
-      t.integer  :genre_id1,  null: false
-      t.integer  :genre_id2,  null: false
-      t.integer  :genre_id3,  null: false
+      t.integer  :genre1_id,  null: false
+      t.integer  :genre2_id,  null: false
+      t.integer  :genre3_id,  null: false
       t.string :name1
       t.string :name2
       t.string :name3

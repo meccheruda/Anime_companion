@@ -15,7 +15,7 @@
           <th class="detail-anime">ジャンル</th>
           <td class="detail-value" colspan="3">
              <% [1, 2, 3].each do |genre_number| %>
-             <%= Genre.find(@anime.send("genre_id#{genre_number}")).name %>
+               <%= Genre.find(@anime.send("genre#{genre_number}_id")).name %>
                <% if genre_number < 3 %>
                     /
                <% end %>
