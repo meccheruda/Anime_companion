@@ -1,8 +1,8 @@
 <div class="main light-mode">
 
-<%= form_with(url: search_animes_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, value: params[:keyword], placeholder: "アニメを検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
+<%= search_form_for @q do |f| %>
+<%= f.text_field :title_or_year_or_production_or_name1_or_name2_or_name3_or_name4_or_name5_or_name6_or_name7_or_name8_or_name9_cont, placeholder: '検索キーワード' %>
+  <%= f.submit '検索' %>
 <% end %>
 
 <div class="anime-list">

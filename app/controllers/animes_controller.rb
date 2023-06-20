@@ -2,7 +2,13 @@ class AnimesController < ApplicationController
   before_action :check_user_id, only: [:new]
 
   def index
-    @animes = Anime.all
+    if params[:q].present?
+      @q = Anime.ransack(params[:q])
+      @animes = @q.result
+    else
+      @q = Anime.ransack
+      @animes = Anime.all
+    end
   end
 
   def new
@@ -24,8 +30,8 @@ class AnimesController < ApplicationController
   end
 
   def search
-    @keyword = params[:keyword]
-    @results = Anime.where("title LIKE ? OR year LIKE ?", "%#{@keyword}%", "%#{@keyword}%")
+    @q = Anime.ransack(params[:q])
+    @results = @q.result(distinct: true)
   end
 
   private
