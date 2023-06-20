@@ -1,5 +1,13 @@
 <div class="main light-mode">
 
+<%= search_form_for @q do |f| %>
+  <%= f.text_field :title_or_year_or_production_or_name1_or_name2_or_name3_or_name4_or_name5_or_name6_or_name7_or_name8_or_name9_cont, placeholder: '検索キーワード' %>
+  <%= f.collection_select :genre1_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー1', selected: (params[:q] ? params[:q][:genre1_id_eq] : nil) %>
+  <%= f.collection_select :genre2_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー2', selected: (params[:q] ? params[:q][:genre2_id_eq] : nil) %>
+  <%= f.collection_select :genre3_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー3', selected: (params[:q] ? params[:q][:genre3_id_eq] : nil) %>
+  <%= f.submit '検索' %>
+<% end %>
+
 <div class="anime-list">
   <table>
     <thead>
@@ -23,7 +31,7 @@
            <table id="genreTable">
                <thead>
                   <tr>
-                    <th>ジャンル</th>
+                    <th>ジャンル１</th>
                     <th>説明</th>
                   </tr>
                </thead>
@@ -48,30 +56,23 @@
                     <td>ドラマ</td>
                     <td>感動的なストーリーや深い人間ドラマが描かれるアニメ</td>
                 </tr>
+               </tbody>
+                <thead>
+                  <tr>
+                    <th>ジャンル2</th>
+                    <th>説明</th>
+                  </tr>
+               </thead>
                  <tr>
-                    <td>感動</td>
+                    <td>ファンタジー</td>
                     <td>魔法や異世界などの架空の要素が含まれるアニメ</td>
                 </tr>
-                  <tr>
-                    <td>サイエンスフィクション</td>
-                    <td>科学技術や未来の世界がテーマとなるアニメ</td>
-                </tr>
-                 <tr>
-                    <td>スリラー</td>
-                    <td>緊迫感やサスペンスがあり、ドキドキする要素が含まれるアニメ</td>
-                </tr>
-                  <tr>
-                    <td>ホラー</td>
-                    <td>恐怖や不気味な要素が描かれるアニメ</td>
-                </tr>
+
                  <tr>
                     <td>冒険</td>
                     <td>主人公が未知の世界や場所を冒険するアニメ</td>
                 </tr>
-                  <tr>
-                    <td>スポーツ</td>
-                    <td>競技やスポーツに焦点を当てたアニメ</td>
-                </tr>
+               
                  <tr>
                     <td>歴史</td>
                     <td>歴史的な時代や出来事を題材にしたアニメ</td>
@@ -80,6 +81,13 @@
                     <td>学園</td>
                     <td>学校や学園生活を舞台にしたアニメ</td>
                 </tr>
+             </tbody>
+              <thead>
+                  <tr>
+                    <th>ジャンル3</th>
+                    <th>説明</th>
+                  </tr>
+               </thead>
                  <tr>
                     <td>SF</td>
                     <td>科学技術の進歩や未来社会をテーマにしたアニメ</td>
@@ -89,24 +97,20 @@
                     <td>謎や推理が中心となるアニメ</td>
                 </tr>
                  <tr>
-                    <td>スーパーパワー</td>
-                    <td>特殊な能力や超人的な力が登場するアニメ</td>
-                </tr>
-                  <tr>
-                    <td>バトル</td>
-                    <td>強さや戦闘を競うバトルがメインとなるアニメ</td>
-                </tr>
-                 <tr>
-                    <td>メカニック</td>
+                    <td>ロボット</td>
                     <td>ロボットやメカが登場し、戦闘や冒険が展開するアニメ</td>
                 </tr>
                   <tr>
                     <td>音楽</td>
                     <td>音楽やアイドル活動が主要な要素となるアニメ</td>
                 </tr>
-                 <tr>
-                    <td>神話・伝説</td>
-                    <td>神話や伝説、神秘的な要素が登場するアニメ</td>
+                <tr>
+                    <td>ホラー</td>
+                    <td>恐怖や不気味な要素が描かれるアニメ</td>
+                </tr>
+                   <tr>
+                    <td>スポーツ</td>
+                    <td>競技やスポーツに焦点を当てたアニメ</td>
                 </tr>
                </tbody>
           </table>

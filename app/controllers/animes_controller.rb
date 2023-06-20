@@ -1,9 +1,15 @@
 class AnimesController < ApplicationController
-  before_action :authenticate_user!
   before_action :check_user_id, only: [:new]
 
   def index
-    @animes = Anime.all
+    if params[:q].present?
+      @q = Anime.ransack(params[:q])
+      @animes = @q.result
+    else
+      @q = Anime.ransack
+      @animes = Anime.all
+    end
+    @genres = Genre.all
   end
 
   def new
@@ -24,12 +30,17 @@ class AnimesController < ApplicationController
     @anime = Anime.find(params[:id])
   end
 
+  def search
+    @q = Anime.ransack(params[:q])
+    @results = @q.result(distinct: true)
+  end
+
   private
 
   def anime_params
     params.require(:anime).permit(:title, :description, :year, :image_url, :quote, :production, :directed_by, 
-      :genre_id1, :genre_id2, :genre_id3, :name1, :name2, :name3, :name4, :name5, :name6, :name7, :name8, :name9)
-      .merge(user_id: current_user.id, genre_id1: params[:anime][:genre_id1], genre_id2: params[:anime][:genre_id2], genre_id3: params[:anime][:genre_id3])
+      :genre1_id, :genre2_id, :genre3_id, :name1, :name2, :name3, :name4, :name5, :name6, :name7, :name8, :name9)
+      .merge(user_id: current_user.id, genre1_id: params[:anime][:genre1_id], genre2_id: params[:anime][:genre2_id], genre3_id: params[:anime][:genre3_id])
   end  
 
   def check_user_id

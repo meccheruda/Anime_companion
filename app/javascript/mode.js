@@ -27,3 +27,27 @@ window.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('darkModeEnabled', isDarkMode);
   }
 });
+
+   // ここからジャンル詳細のjavascript
+
+   document.addEventListener('DOMContentLoaded', function() {
+
+    const genreToggleBtn = document.getElementById('genreToggleBtn');
+    const genreTable = document.getElementById('genreTable');
+  
+    genreTable.style.display = 'none';
+  
+  
+    genreToggleBtn.addEventListener('click', function() {
+  
+      if (genreTable.style.display === 'none') {
+        genreTable.style.display = 'block';
+      } else {
+        genreTable.style.display = 'none';
+      }
+    });
+  });
+  
+  window.addEventListener('load', function() {
+  
+  });
