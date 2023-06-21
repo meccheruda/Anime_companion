@@ -9,11 +9,15 @@
 # URL
 https://anime-companion.onrender.com
 
+
+# テスト用アカウント
+・テスト用アカウント   1111@1111
+・テスト用パスワード   111111
+
 # 利用方法
 アニメ情報、コメントを閲覧するだけなら登録なしでも可能。
-コメントやお気に入り登録したい場合は要新規登録。
 新規登録はヘッダーの新規登録から行う。
-アニメの感想や評価やらを自由にコメントしよう。
+アニメの感想や評価やらを自由にコメントしよう(実装予定)。
 
 # アプリケーションを作成した背景
 自身のブログにオリジナリティを出すために、オリジナルのアニメ検索、一覧アプリを作成
@@ -27,19 +31,12 @@ https://anime-companion.onrender.com
 
 
 # 実装予定の機能
-## 1.アニメ情報の提供:
-アニメのリリース情報、放送スケジュール、キャスト情報などを提供します。
-人気のアニメランキングやレビュー、視聴者のコメントも閲覧できます。
+## 1.コメント機能
+アニメに対して、感想やコメントや評価をコメントできます。
 
-## 2.検索機能
-年代、キャスト、制作会社、原作者、ジャンル、声優などでアニメを検索できます。
+## 2.お気に入り機能
+そのユーザーが好きなアニメをお気に入り設定して、マイページでお気に入りしたアニメ一覧が見れます。
 
-## 3.アニメのおすすめ機能:
-ユーザーの好みや視聴履歴に基づいて、オススメのアニメを提案します。
-ジャンルや人気度、評価などのフィルタリング機能を使って、アニメの検索や絞り込みができます。
-
-## 4.アプリ内のブログ連携:
-アプリ内でブログの最新記事を閲覧できるようにし、ユーザーが便利にアニメ情報とブログ記事を一元管理できます。
 
 # データベース設計
 [ER図](app/assets/images/ER%E5%9B%B3.png)
@@ -48,131 +45,10 @@ https://anime-companion.onrender.com
 [画面遷移図](app/assets/images/%E9%81%B7%E7%A7%BB%E5%9B%B3.png)
 
 
-# テーブル設計
-
-## users テーブル  (ユーザー情報)
-
-| Column             | Type    | Options                      |
-| ------------------ | ------- | ---------------------------- |
-| name               | string  | null: false                  |ニックネーム
-| email              | string  | null: false unique: true     |メールアドレス
-| encrypted_password | string  | null: false                  |パスワード
-| birth_date         |  date   | null: false                  |生年月日
-
-
-### Association
-
-- has_many :animes
-- has_many :comments
-- has_many :favorites
-
-
-## Animes テーブル  (アニメ情報)
-
-| Column        | Type       | Options                       |
-| ------------- | ---------- | ----------------------------- |
-| title         |  string    | null: false                   |アニメのタイトル
-| description   |  text      | null: false                   |アニメの説明
-| year          |  string    | null: false                   |アニメの年
-| image_url     |  text      | null: false                   |アニメ画像
-| quote         |  string    | null: false                   |画像の引用元
-| production    |  string    | null: false                   |制作会社
-| directed_by   |  string    | null: false                   |アニメ監督
-| genre_id      | integer    | null: false                   |ジャンル（アクティブハッシュ）
-| user          | references | null: false, foreign_key: true |投稿した人のID
-
-
-### Association
-
-- belongs_to :user
-- has_many :Comments
-- has_many :anime_favorites
-- has_many :favorites,through: :anime_favorites
-- has_many :voices
-- has_many :voices,through: :anime_voices
-
-
-
-## Voice テーブル （声優情報）
-
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| name        |  string    |                                |声優
-| anime       | references | null: false  foreign_key: true |アニメのID
-
-### Association
-
-- has_many :animes
-- has_many :voices,through: :anime_voice
-
-
-
-
-
-## Anime_voice テーブル  (アニメと声優の中間テーブル)
-
-| Column      | Type     | Options                       |
-| ----------- | -------- | ----------------------------- |
-| voice       | references | null: false, foreign_key: true |声優テーブルのID
-| anime       | references | null: false  foreign_key: true |アニメのID
-
-### Association
-
-- belongs_to :anime
-- belongs_to :voice
-
-
-
-
-
-
-## Comments テーブル  (コメント情報)
-
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| content     |  text      | null: false                    |コメント
-| user        | references | null: false, foreign_key: true |コメントした人のID
-| anime       | references | null: false  foreign_key: true |アニメのID
-
-### Association
-
-- belongs_to :user
-- belongs_to :anime
-
-
-## Favorites テーブル  (お気に入り情報)
-
-| Column      | Type     | Options                       |
-| ----------- | -------- | ----------------------------- |
-| user        | references | null: false, foreign_key: true |お気に入りしたユーザーののID
-| anime       | references | null: false  foreign_key: true |アニメのID
-
-### Association
-
-- belongs_to :user
-- has_many :anime_favorites
-- has_many :animes,through: :anime_favorites
-
-
-## Anime_favorites テーブル  (お気に入りとアニメの中間テーブル)
-
-| Column      | Type     | Options                       |
-| ----------- | -------- | ----------------------------- |
-| favorite    | references | null: false, foreign_key: true |お気に入りしたユーザーののID
-| anime       | references | null: false  foreign_key: true |アニメのID
-
-### Association
-
-- belongs_to :anime
-- belongs_to :favorite
-
-
-
-
 # 開発環境
 
 フロントエンド: HTML, CSS, JavaScript
-バックエンド: RubyとRuby on Rails
+バックエンド: Ruby3.0.1とRuby on Rails7.0.5
 
 
 # ローカルでの動作方法
@@ -188,4 +64,12 @@ git clone https://github.com/meccheruda/Anime_Companion
 
 
 # 工夫したポイント
-まだ未定
+バックエンドをメインに学習していたので、フロントエンドの作業に手間取りました。
+
+RubyとRailsのバージョンが2.6.5の6.0.0で学習してたのに、今回のアプリからバージョンアップしてしまったせいで、
+使い勝手が悪くなってしまった。
+ただそのおかげで、バージョンの確認の大切さがわかったし、応用力もついたきがします。
+
+javascriptに苦手意識があったので、積極的にjavascriptを組みこんだおかげで、動き方が大体つかめてきました。
+
+検索機能を実装するときうまくいかず2日間悩み続けた結果Ransackという便利なジェムにたどり着き、2時間近くで実装できたのはいい経験でした。
