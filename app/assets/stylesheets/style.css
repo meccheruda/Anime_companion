@@ -209,3 +209,70 @@ padding-top: 50px;
 .detail-table tr:nth-child(odd) {
   background-color: #ffffff;
 }
+
+
+@media only screen and (max-width: 768px) {
+  #mode-toggle {
+    display: none;
+  }
+}
+
+
+/* スマートフォン用のスタイル */
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-right {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .anime-list table {
+    width: 100%;
+  }
+
+  .anime-box-img {
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .detail-table {
+    width: 100%;
+  }
+}
+
+/* iPad用のスタイル */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-right {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .anime-list table {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .anime-box-img {
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .detail-table {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
