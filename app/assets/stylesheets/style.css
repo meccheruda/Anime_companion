@@ -276,3 +276,14 @@ padding-top: 50px;
     margin: 0 auto;
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination .pagination-previous,
+.pagination .pagination-next {
+  margin: 0 10px;
+}

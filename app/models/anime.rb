@@ -1,6 +1,6 @@
 class Anime < ApplicationRecord
   belongs_to :user
-
+  paginates_per 15
 
   def self.ransackable_attributes(auth_object = nil)
     %w[title year production name1 name2 name3 name4 name5 name6 name7 name8 name9 genre1_id genre2_id genre3_id]

@@ -24,7 +24,9 @@
     </tbody>
   </table>
 </div>
-
+<div class="pagination">
+  <%= paginate @animes, previous_label: "&laquo; 前へ", next_label: "次へ &raquo;", inner_window: 2, outer_window: 1 %>
+</div>
 
     </div>
 <div id="genreToggleBtn" class="nav-link btn btn-light button-style">ジャンル詳細</div>

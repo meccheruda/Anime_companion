@@ -2,13 +2,15 @@ class AnimesController < ApplicationController
   before_action :check_user_id, only: [:new]
 
   def index
+    @q = Anime.ransack(params[:q])
+    @animes = @q.result
+  
     if params[:q].present?
-      @q = Anime.ransack(params[:q])
-      @animes = @q.result
+      @animes = @animes.page(params[:page]).per(15)
     else
-      @q = Anime.ransack
-      @animes = Anime.all
+      @animes = Anime.page(params[:page]).per(15)
     end
+  
     @genres = Genre.all
   end
 
