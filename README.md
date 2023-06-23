@@ -28,6 +28,33 @@ https://anime-companion.onrender.com
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/13ONyghjHVy58w5LQR5VdwaS3J8yiNE7gKrG8P7TJf40/edit#gid=982722306)
 
 # 実装した機能についての画像やGIFおよびその説明
+## プルダウン形式でジャンル検索ができます。
+例えばアクションで検索したらアクションアニメ一覧出ますし、学園系アニメで検索したら学園系アニメが検索できます。
+２つ３つの絞り込み検索も可能です。
+https://gyazo.com/c29537e2e778d6f74036a271f7cd959a　（一種類検索）
+https://gyazo.com/c16b9ae9b3e9a9a9508c0a9b3040eb4a　（複数検索）
+
+## キーワード検索ができます。
+アニメのタイトルやら出演してる声優でもアニメを検索できます。
+https://gyazo.com/a8ad7b38cf876f95729213f435012933　（タイトル検索）
+https://gyazo.com/55f8a0aa9ccfb61a66345961a4865dbe　（声優検索）
+https://gyazo.com/eeae6d81d56f24a40370abb3da9a9e00　（声優+ジャンル検索）
+
+## javascript関連。
+右下の天使の画像を押せばダークモードに切り替わり、堕天使の画像を押せばライトモードに戻ります。
+https://gyazo.com/d92db2adbee4586783dfda515101837c
+ジャンルの詳細はブラウザの下のジャンル詳細を押せば、ジャンルの詳細がわかるのでそれを目安に検索できます。
+https://gyazo.com/b931d4978689f28db4af043a14f51a4
+
+画像はAI生成なので著作権はありません。
+
+## その他の機能
+アニメ詳細ページと左上を押せばトップページに戻る。
+アニメ画像は著作権があるので、引用という形をとるための条件と、引用元は記載するようにしています。
+https://gyazo.com/e394277bb741089fd0cc8bc2beef9d27
+物足りない人はフッターにあるバナーを押せば、自身が運営してるアニメブログに飛べます。
+https://gyazo.com/837614dcb784b6d5c7030cbe4c72f04c　（外部リンク）
+
 
 
 # 実装予定の機能
