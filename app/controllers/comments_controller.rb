@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
-    redirect_to "/animes/#{comment.anime.id}"
+    redirect_to "/animes/#{params[:anime_id]}"
   end
 
   private

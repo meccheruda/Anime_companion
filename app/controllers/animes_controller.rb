@@ -30,6 +30,8 @@ class AnimesController < ApplicationController
 
   def show
     @anime = Anime.find(params[:id])
+    @comment = Comment.new
+    @comments = @anime.comments.includes(:user)
   end
 
   def search
