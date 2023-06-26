@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_061137) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_26_073403) do
   create_table "animes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -35,6 +35,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_061137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_animes_on_user_id"
+  end
+
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "anime_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
