@@ -1,9 +1,17 @@
+.body{
+  width: 100%;
+}
+
 .header{
   background: rgb(209, 209, 164);
-  display: flex;
-  justify-content: space-between;
   height: 70px;
 }
+
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .header-right{
   display: flex;
@@ -18,6 +26,9 @@ ul{
   display: flex;
   justify-content: center;
   border: 2px black;
+  margin: 10px;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
 }
 
 
@@ -39,13 +50,19 @@ ul{
 #genreTable td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+#genreToggleBtn {
+  margin-top: 10px;
 }
 /*ここまでがヘッダー部分*/
 /*ここからjavascript系*/
 .main {
   background-color: #f2f2f2;
   position: relative;
-  height: 100vw;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .mode-toggle-button {
