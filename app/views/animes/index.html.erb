@@ -1,12 +1,27 @@
+
 <div class="main light-mode">
 
-<%= search_form_for @q do |f| %>
-  <%= f.text_field :title_or_year_or_production_or_name1_or_name2_or_name3_or_name4_or_name5_or_name6_or_name7_or_name8_or_name9_cont, placeholder: '検索キーワード' %>
-  <%= f.collection_select :genre1_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー1', selected: (params[:q] ? params[:q][:genre1_id_eq] : nil) %>
-  <%= f.collection_select :genre2_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー2', selected: (params[:q] ? params[:q][:genre2_id_eq] : nil) %>
-  <%= f.collection_select :genre3_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー3', selected: (params[:q] ? params[:q][:genre3_id_eq] : nil) %>
-  <%= f.submit '検索' %>
+<%= search_form_for @q, html: { class: 'row g-3' } do |f| %>
+  <div class="col-md-6">
+    <%= f.text_field :title_or_year_or_production_or_name1_or_name2_or_name3_or_name4_or_name5_or_name6_or_name7_or_name8_or_name9_cont, placeholder: '検索キーワード' %>
+  </div>
+  <div class="col-md-2">
+  ジャンル1
+    <%= f.collection_select :genre1_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー1', selected: (params[:q] ? params[:q][:genre1_id_eq] : nil) %>
+  </div>
+  <div class="col-md-2">
+  ジャンル2
+    <%= f.collection_select :genre2_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー2', selected: (params[:q] ? params[:q][:genre2_id_eq] : nil) %>
+  </div>
+  <div class="col-md-2">
+  ジャンル3
+    <%= f.collection_select :genre3_id_eq, @genres, :id, :name, include_blank: 'すべてのジャンル', label: 'カテゴリー3', selected: (params[:q] ? params[:q][:genre3_id_eq] : nil) %>
+  </div>
+  <div class="col-md-12">
+    <%= f.submit '検索', class: 'btn btn-primary' %>
+  </div>
 <% end %>
+
 
 <div class="anime-list">
   <table>
@@ -23,12 +38,12 @@
       <% end %>
     </tbody>
   </table>
-</div>
-<div class="pagination">
-  <%= paginate @animes, previous_label: "&laquo; 前へ", next_label: "次へ &raquo;", inner_window: 2, outer_window: 1 %>
-</div>
-
     </div>
+    <div class="pagination">
+      <%= paginate @animes, previous_label: "&laquo; 前へ", next_label: "次へ &raquo;", inner_window: 2, outer_window: 1 %>
+    </div>
+
+</div>
 <div id="genreToggleBtn" class="nav-link btn btn-light button-style">ジャンル詳細</div>
            <table id="genreTable">
                <thead>
